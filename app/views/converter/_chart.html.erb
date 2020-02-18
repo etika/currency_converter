@@ -1,0 +1,31 @@
+<div id="chart"></div>
+<script type="text/javascript">
+	 var currency_list = '<%= currency_list%>'; // for string
+     var chart = c3.generate({
+	 bindto: '#chart',
+     data: {
+        x: 'x',
+        columns: [
+            ['x', 2001, 2003, 2007, 2008, 2009, 2010],
+            ['Currency 1', 30, 200, 100, 400, 150, 250],
+            ['Currency 2', 130, 300, 200, 300, 250, 450]
+        ]
+    },
+
+    axis: {
+        y: {
+        	label: { // ADD
+          text: 'Years',
+          position: 'outer-middle'
+        },
+
+            // max: 400,
+            // min: -400,
+            // Range includes padding, set 0 if no padding needed
+            // padding: {top:0, bottom:0}
+        },
+
+    }
+});
+
+</script>

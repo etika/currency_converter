@@ -1,0 +1,24 @@
+
+<h1>
+<%= form_tag convert_currency_path, method: :post, remote: true do %>
+  <label>Post title:</label><br>
+  <%=select_tag 'currency_first', options_for_select(@currencies.collect{ |u| [u, u] })%>
+  <%=select_tag 'currency_second', options_for_select(@currencies.collect{ |u| [u, u] })%>
+  <%=date_field_tag :start_year, Date.today, class: "datepicker" %>
+  <%=date_field_tag :end_year, Date.today, class: "datepicker" %>
+  <%= submit_tag "Submit" %>
+<% end %>
+
+
+</h1>
+<div class="line_chart">
+  <%= render partial: "chart", :locals => {:currency_list=>[]} %>
+</div>
+
+<script type="text/javascript">
+ $(document).ready(function(){
+    $("#start_year").datepicker();
+    $("#end_year").datepicker();
+  });
+</script>
+
