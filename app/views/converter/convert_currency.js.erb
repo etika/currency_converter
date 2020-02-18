@@ -1,1 +1,1 @@
-$('.line_chart').html("<%= escape_javascript(render :partial => 'converter/chart', :locals => {:currency_list=> @currency_first_array}) %>")
+$('.line_chart').html("<%= escape_javascript(render :partial => 'converter/chart', :locals => {:first_currency_array=> @currency_first_array, :second_currency_array=> @second_currency_array, :years_array=>@years_array}) %>")
